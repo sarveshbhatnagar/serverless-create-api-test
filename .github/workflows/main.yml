@@ -1,0 +1,21 @@
+name: CI-CD
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  gcloud:
+    steps:
+    - uses: 'actions/checkout@v2'
+
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v0'
+      with:
+        credentials_json: '${{ secrets.gcp_credentials }}'
+
+    - id: 'deploy'
+      uses: 'google-github-actions/deploy-cloud-functions@v0'
+      with:
+        name: 'my-function'
+        runtime: 'nodejs12'
