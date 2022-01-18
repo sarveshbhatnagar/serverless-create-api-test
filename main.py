@@ -1,4 +1,4 @@
-def hello_world(request):
+def hello_world_new_world(request):
     """Responds to any HTTP request.
     Args:
         request (flask.Request): HTTP request object.
