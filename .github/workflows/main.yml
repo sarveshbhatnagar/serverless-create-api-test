@@ -18,5 +18,6 @@ jobs:
     - id: 'deploy'
       uses: 'google-github-actions/deploy-cloud-functions@v0'
       with:
-        name: 'somerandom'
+        name: 'hello_world_new_world'
+        entry_point: 'hello_world_new_world'
         runtime: 'python38'
